@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome - UCLAN SU Shop</title>
+</head>
+
+<body id="cartContent">
+
+    <!--Logo & core nav links-->
+    <header class="header">
+        <nav>
+            <div class="navbar">
+            <figure class="logo"><img src="./images/logo.svg" alt="UCLan logo"></figure>
+              <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+
+    <main id="purchaseList">
+        <ul class="checkoutContainer" id="purchaseCard">
+            <li><img class="cartItemImage" src=""></li>
+            <li>
+                <p class="cartItemName"></p>
+            </li>
+            <li>
+                <p class="cartItemColor"></p>
+            </li>
+            <li>
+                <p class="cartItemPrice"></p>
+            </li>
+        </ul>
+
+        <div class="checkoutContainer" id="purchaseInfo">
+            <h3>Your order:</h3>
+            <p id="orderCost">Cost of items: </p>
+            <p>Cost of shipping: £5.99</p>
+            <p id="totalCost">Total cost: </p>
+            <button id="checkoutButton">Checkout</button><br>
+            <h1>Items in your order: </h1>
+        </div>
+    </main>
+
+    <script src="cart.js"></script>
+
+    <footer>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        <script src="footerbutton.js"></script>
+    </footer>
+
+</body>
+
+</html>
