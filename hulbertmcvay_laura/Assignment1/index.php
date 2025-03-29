@@ -33,6 +33,19 @@
             <div class="container">
                 <h1>UCLan</h1>
 
+                <h3>Current Offers</h3>
+                <?php
+                    require_once("conn.php");
+
+                    $query = "SELECT * FROM tbl_offers";
+                    $result = mysqli_query($connection, $query);
+                    echo "<div id='offerList'>";
+                    while($offer=mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                        echo "<div class='offerCard'>";
+                        echo "<h3>" .$offer["offer_title"]."</h3><hr>";
+                        echo "<p>".$offer["offer_dec"]."</p></div>";
+                    }
+                ?>
 <p>Hello <?php echo htmlspecialchars($_SESSION['name']);?> <p>
 
                 <p>The University of Central Lancashire is the international, multi-campus university tracing its roots
