@@ -55,7 +55,7 @@
             // Colour dropdown menu
             echo "<form method='GET'>"; 
             echo "<select name='colourFilter'>";
-            echo "<option value=''>All Colours</option>"; // Add an "All Colors" option
+            echo "<option value=''>All Colours</option>"; 
             while ($colour = mysqli_fetch_assoc($availableColours)) {
                 $selected = ($colourFilter == $colour['colour']) ? 'selected' : '';
                 echo "<option value='" . $colour['colour'] . "'>" . $colour['colour'] . "</option>";
@@ -64,7 +64,7 @@
 
             // Type dropdown menu
             echo "<select name='typeFilter'>";
-            echo "<option value=''>All Types</option>"; // Add an "All Types" option
+            echo "<option value=''>All Types</option>"; 
             while ($type = mysqli_fetch_assoc($availableTypes)) {
                 $selected = ($typeFilter == $type['product_type']) ? 'selected' : '';
                 echo "<option value='" . $type['product_type'] . "'>" . $type['product_type'] . "</option>";
@@ -72,7 +72,7 @@
             echo "</select>";
             echo "<input type='submit' value='Filter'>";
             echo "</form>";
-            
+
 
             $query = "SELECT * FROM tbl_products WHERE 1";
             if (!empty($colourFilter)) {
@@ -90,19 +90,22 @@
                 echo "<h3>".$product["product_title"]."</h3><hr>";
                 echo "<img src='".$product["product_image"]."'>";
                 echo "<p> £".$product["product_price"]."</p></div>";
-                echo "<a href ='item.html'>Read more...</a>";
+                echo "<a href='item.php?product_id=" . $product['product_id'] . "'>Read more...</a>";
                 if ($_SESSION["logged"] == false) {
                     echo "<a href ='login.php'>Add to Basket</a>";
                 } else {
                     echo "<a href ='cart.html'>Add to Basket</a>";
                 }
+                echo "</div>";
+            
+            echo "</div>"; 
             }
         ?>
 
 
     </main>
 
-    <footer>
+    <footer>    
         <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <script src="footerbutton.js"></script>
     </footer>
