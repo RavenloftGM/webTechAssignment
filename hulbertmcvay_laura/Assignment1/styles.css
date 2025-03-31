@@ -286,4 +286,15 @@ hr {
     max-width: 15em;
 }
 
-/*Login*/
+.reviewContainer {
+    display: flex;
+    flex-direction: row; /* Set the children to be aligned in a row (side by side) */
+    width: 80%;
+    margin: auto;
+    justify-content: space-between; /* Optional: add space between the two divs */
+}
+
+.createReview, .displayReview {
+    margin-top: 1em;
+    width: 50%;
+}

@@ -20,6 +20,7 @@ $dbpassword = $record["user_pass"];
 // if successful, logs the user in and stores their name
 if ($mypassword == $dbpassword){
 $_SESSION["logged"] = true;
+$_SESSION["user_id"] = $record["user_id"];
 $_SESSION["name"] = $record["user_full_name"];
 header ('Location: index.php');
 }else{
